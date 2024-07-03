@@ -11,6 +11,8 @@ import Publish from './images/publish_pdp_blue.png';
 import Sources from './images/Retailer_Sources_Simplified.png'
 import Brands from './images/Brand_Products.png';
 import { useEffect, useMemo, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 function App() {
  const text=useMemo(()=>["Retailers","Brands","Marketplaces","Distributors"],[]);
   const [idx,setidx]=useState(0);
@@ -60,10 +62,10 @@ function App() {
         <div className='text-center font-bold text-lg'>Built by catalog experts from</div>
         <div>
           <div className='flex justify-center items-center gap-4 flex-wrap'>
-            <div className='w-[120px]  md:w-[160px]'><img src={Microsoft} className='w-full h-full' alt="org-logo"/></div>
-            <div className='w-[120px]  md:w-[160px]'><img src={Stanford} className='w-full h-full' alt="org-logo"/></div>
-            <div className='w-[120px]  md:w-[160px]'><img src={Uber} className='w-full h-full' alt="org-logo"/></div>
-            <div className='w-[120px]  md:w-[160px]'><img src={Meta} className='w-full h-full' alt="org-logo"/></div>
+            <div className='w-[120px]  md:w-[160px]'><LazyLoadImage effect='blur' src={Microsoft} className='w-full h-full' alt="org-logo" loading="lazy" /></div>
+            <div className='w-[120px]  md:w-[160px]'><LazyLoadImage effect='blur' src={Stanford} className='w-full h-full' alt="org-logo" loading="lazy" /></div>
+            <div className='w-[120px]  md:w-[160px]'><LazyLoadImage effect='blur' src={Uber} className='w-full h-full' alt="org-logo" loading="lazy" /></div>
+            <div className='w-[120px]  md:w-[160px]'><LazyLoadImage effect='blur' src={Meta} className='w-full h-full' alt="org-logo" loading="lazy" /></div>
           </div>
         </div>
       </div>
@@ -73,17 +75,17 @@ function App() {
         <div className='flex flex-col gap-4 flex-wrap justify-center my-6 items-center md:flex-row'>
           <div className='w-full md:w-[30%]'>
             <div className='text-2xl font-bold my-2 sm:text-4xl'>Import</div>
-            <div className='w-100 rounded-lg'><img src={ImportSrc} className='w-100 rounded-lg' alt="import"/></div>
+            <div className='w-100 rounded-lg'><LazyLoadImage effect='blur' src={ImportSrc} className='w-100 rounded-lg' alt="import" loading="lazy" /></div>
             <div className='text-xl my-4'>Seamlessly import data from anywhere and maintain a single source of truth for product information.</div>
           </div>
           <div className='w-full md:w-[30%]'>
             <div className='text-2xl font-bold my-2 sm:text-4xl'>Enrich</div>
-            <div className='w-100 rounded-lg'><img src={Enrich} className='w-100 rounded-lg' alt="import"/></div>
+            <div className='w-100 rounded-lg'><LazyLoadImage effect='blur' src={Enrich} className='w-100 rounded-lg' alt="import" loading="lazy" /></div>
             <div className='text-xl my-4'>Automatically enrich product images, descriptions, and attributes to improve discoverability and conversion.</div>
           </div>
           <div className='w-full md:w-[30%]'>
             <div className='text-2xl font-bold my-2 sm:text-4xl'>Publish</div>
-            <div className='w-100 rounded-lg'><img src={Publish} className='w-100 rounded-lg' alt="import"/></div>
+            <div className='w-100 rounded-lg'><LazyLoadImage effect='blur' src={Publish} className='w-100 rounded-lg' alt="import" loading="lazy" /></div>
             <div className='text-xl my-4'>Generate a clean data feed to publish detailed product listings to your storefront and distribution channels.
             </div>
           </div>
@@ -107,7 +109,7 @@ function App() {
               </div>
             </div>
             <div className='full md:w-1/2'>
-              <div className='w-full flex justify-center items-center rounded-lg'><div className='w-full'><img src={Brands} className='w-100 h-100 rounded-lg shadow shadow-black' alt="Sources"/></div></div>
+              <div className='w-full flex justify-center items-center rounded-lg'><div className='w-full'><LazyLoadImage effect='blur' src={Brands} className='w-100 h-100 rounded-lg shadow shadow-black' alt="Sources" loading="lazy" /></div></div>
             </div>
         </div>
       </div>
@@ -132,7 +134,7 @@ function App() {
               </div>
             </div>
             <div className='full md:w-1/2'>
-              <div className='w-full flex justify-center items-center rounded-lg'><div className='w-full'><img src={Sources} className='w-100 h-100 rounded-lg shadow shadow-black' alt="Sources"/></div></div>
+              <div className='w-full flex justify-center items-center rounded-lg'><div className='w-full'><LazyLoadImage effect='blur' src={Sources} className='w-100 h-100 rounded-lg shadow shadow-black' alt="Sources" loading="lazy" /></div></div>
             </div>
         </div>
       </div>
